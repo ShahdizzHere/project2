@@ -93,4 +93,15 @@ main .scroll img {
 section {
     background-color: rgb(21, 18, 20);
     color: white;
+    padding: 10px;
+}
+
+.black {
+    border: 1px 0;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+}
+
+h3 {
+    font-size:medium;
 }

@@ -23,3 +23,9 @@ footer a{
 footer a:hover {
     font-weight: bold;
 }
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

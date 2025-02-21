@@ -10,14 +10,13 @@
     font-size: 15px;
 }
 
-
-
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
+
 .container {
     width: 75%;
     text-align: center;
@@ -60,11 +59,15 @@ section {
     max-width: 100%;
     white-space: nowrap;
     scroll-behavior: smooth;
-    justify-content: center; /* Ensures it starts correctly */
+    justify-content: flex-start;
     align-items: center;
 }
 
-/* Styling for each type box */
+.scroll::before {
+    content: "";
+    flex: 0 0 10px;
+}
+
 .scroll div {
     display: flex;
     flex-direction: column;
@@ -76,10 +79,9 @@ section {
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    scroll-snap-align: start; /* Ensures proper positioning */
+    scroll-snap-align: start;
 }
 
-/* Ensures images stay centered */
 .scroll img {
     height: 300px;
     width: 300px;

@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 header {
     height: 80px;
     width: 100%;
@@ -52,13 +55,15 @@ nav a {
     text-decoration: none;
     color: white;
     padding: 6px 6px;
+    position: relative;
+    border: 1px solid transparent;
+    transition: border-bottom 0.15s ease-in-out;
 }
 
 nav a:hover {
-    text-decoration: underline;
-    text-underline-offset: 8px;
-    text-decoration-thickness: 2px;
+    border-bottom: 3px solid white;
 }
+
 
 @media screen and (max-width: 768px) {
     nav .list {

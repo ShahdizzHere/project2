@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Quiz</title>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="quiz.css">
-    <title>The Quiz - A Space Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
+
     <header>
         <nav>
             <div class="container">
@@ -21,7 +25,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="timeline.html">Timeline of Everything</a></li>
                             <li><a href="types.html">Types of Everything</a></li>
-                            <li><a href="storms.html">Geomagnatic Storms</a></li>
+                            <li><a href="storms.html">Geomagnetic Storms</a></li>
                             <li><a href="quiz.html">Quiz</a></li>
                         </ul>
                     </div>
@@ -29,6 +33,92 @@
             </div>
         </nav>
     </header>
+
+    <main>
+        <div class="container">
+            <h1>Test Your Space Knowledge! 🚀</h1>
+            <form id="quiz-form">
+
+                <div class="question">
+                    <p>1. What event started the universe?</p>
+                    <label><input type="radio" name="q1" value="Big Bang"> Big Bang</label>
+                    <label><input type="radio" name="q1" value="Solar Flare"> Solar Flare</label>
+                    <label><input type="radio" name="q1" value="Nebula Explosion"> Nebula Explosion</label>
+                </div>
+
+                <div class="question">
+                    <p>2. What is the most common type of star?</p>
+                    <label><input type="radio" name="q2" value="White Dwarf"> White Dwarf</label>
+                    <label><input type="radio" name="q2" value="Red Dwarf"> Red Dwarf</label>
+                    <label><input type="radio" name="q2" value="Neutron Star"> Neutron Star</label>
+                </div>
+
+                <div class="question">
+                    <p>3. Which planet has the most moons?</p>
+                    <label><input type="radio" name="q3" value="Neptune"> Neptune</label>
+                    <label><input type="radio" name="q3" value="Saturn"> Saturn</label>
+                    <label><input type="radio" name="q3" value="Jupiter"> Jupiter</label>
+                </div>
+
+                <div class="question">
+                    <p>4. What is a geomagnetic storm?</p>
+                    <label><input type="radio" name="q4" value="Solar wind disturbance"> A disturbance in Earth’s
+                        magnetic field caused by solar wind</label>
+                    <label><input type="radio" name="q4" value="Earthquake"> An earthquake in space</label>
+                    <label><input type="radio" name="q4" value="Asteroid Impact"> An asteroid impact</label>
+                </div>
+
+                <div class="question">
+                    <p>5. What type of galaxy is the Milky Way?</p>
+                    <label><input type="radio" name="q5" value="Spiral"> Spiral</label>
+                    <label><input type="radio" name="q5" value="Elliptical"> Elliptical</label>
+                    <label><input type="radio" name="q5" value="Irregular"> Irregular</label>
+                </div>
+
+                <div class="question">
+                    <p>6. What protects Earth from solar radiation?</p>
+                    <label><input type="radio" name="q6" value="Clouds"> Clouds</label>
+                    <label><input type="radio" name="q6" value="Magnetic Field"> Earth's Magnetic Field</label>
+                    <label><input type="radio" name="q6" value="Ozone Layer"> Ozone Layer</label>
+                </div>
+
+                <div class="question">
+                    <p>7. What happens to a massive star at the end of its life?</p>
+                    <label><input type="radio" name="q7" value="Supernova"> It explodes in a supernova</label>
+                    <label><input type="radio" name="q7" value="Turns into an icy planet"> It turns into an icy
+                        planet</label>
+                    <label><input type="radio" name="q7" value="Shrinks into an asteroid"> It shrinks into an
+                        asteroid</label>
+                </div>
+
+                <div class="question">
+                    <p>8. What is the name of a small, rocky object that orbits the Sun?</p>
+                    <label><input type="radio" name="q8" value="Comet"> Comet</label>
+                    <label><input type="radio" name="q8" value="Meteor"> Meteor</label>
+                    <label><input type="radio" name="q8" value="Asteroid"> Asteroid</label>
+                </div>
+
+                <div class="question">
+                    <p>9. What causes the Northern Lights?</p>
+                    <label><input type="radio" name="q9" value="Charged particles from the Sun"> Charged particles from
+                        the Sun interacting with Earth’s magnetic field</label>
+                    <label><input type="radio" name="q9" value="Reflected sunlight"> Reflected sunlight</label>
+                    <label><input type="radio" name="q9" value="Burning meteors"> Burning meteors</label>
+                </div>
+
+                <div class="question">
+                    <p>10. What force keeps planets in orbit around the Sun?</p>
+                    <label><input type="radio" name="q10" value="Solar Winds"> Solar Winds</label>
+                    <label><input type="radio" name="q10" value="Magnetic Fields"> Magnetic Fields</label>
+                    <label><input type="radio" name="q10" value="Gravity"> Gravity</label>
+                </div>
+
+                <button type="button" onclick="checkAnswers()">Submit</button>
+            </form>
+            <p id="result"></p>
+            <img id="result-img" src="" alt="" style="display: none; width: 300px;">
+        </div>
+    </main>
     <footer>
         <div class="container">
             <div class="row">
@@ -45,4 +135,50 @@
         </div>
     </footer>
 </body>
+
+<script>
+    function checkAnswers() {
+        let score = 0;
+        let answers = {
+            q1: "Big Bang",
+            q2: "Red Dwarf",
+            q3: "Saturn",
+            q4: "Solar wind disturbance",
+            q5: "Spiral",
+            q6: "Magnetic Field",
+            q7: "Supernova",
+            q8: "Asteroid",
+            q9: "Charged particles from the Sun",
+            q10: "Gravity"
+        };
+
+        for (let key in answers) {
+            let selected = document.querySelector(`input[name="${key}"]:checked`);
+            if (selected && selected.value === answers[key]) {
+                score++;
+            }
+        }
+
+        let resultText = `You got ${score}/10 correct!`;
+        document.getElementById("result").innerText = resultText;
+
+        let img = document.getElementById("result-img");
+        if (score == 10) img.src = "img/meme1.jpg";
+        else if (score == 9) img.src = "img/meme2.jpg";
+        else if (score == 8) img.src = "img/meme3.jpg";
+        else if (score == 7) img.src = "img/meme4.jpg";
+        else if (score == 6) img.src = "img/meme5.jpg";
+        else if (score == 5) img.src = "img/meme6.jpg";
+        else if (score == 4) img.src = "img/meme7.jpg";
+        else if (score == 3) img.src = "img/meme8.jpg";
+        else if (score == 2) img.src = "img/meme9.jpg";
+        else if (score == 1) img.src = "img/meme10.jpg";
+        else if (score == 0) img.src = "img/meme11.jpg";
+
+        img.style.display = "block";
+    }
+</script>
+
+</body>
+
 </html>

@@ -10,19 +10,19 @@
     font-size: 15px;
 }
 
-section {
+main section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
 
-.container {
+main .container {
     width: 75%;
     text-align: center;
 }
 
-.object {
+main .object {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@ section {
     height: 80vh;
 }
 
-.words {
+main .words {
     width: 300px;
     text-align: center;
     word-wrap: break-word;
@@ -38,7 +38,7 @@ section {
     white-space: normal;
 }
 
-.type {
+main .type {
     width: 320px;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ section {
     flex: 0 0 auto;
 }
 
-.scroll {
+main .scroll {
     display: flex;
     overflow-x: auto;
     gap: 20px;
@@ -63,12 +63,12 @@ section {
     align-items: center;
 }
 
-.scroll::before {
+main .scroll::before {
     content: "";
     flex: 0 0 10px;
 }
 
-.scroll div {
+main .scroll div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +82,7 @@ section {
     scroll-snap-align: start;
 }
 
-.scroll img {
+main .scroll img {
     height: 300px;
     width: 300px;
     object-fit: cover;
@@ -90,7 +90,7 @@ section {
     margin-bottom: 10px;
 }
 
-.black {
+main .black {
     background-color: rgb(21, 18, 20);
     color: white;
 }

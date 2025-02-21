@@ -32,10 +32,12 @@ main {
 
 main .row {
     padding: 20px 0;
+    display: flex;
+    justify-content: center;
 }
 
 main .row .words {
-    width: 100%;
+    width: 75%;
     height: 75vh;
     display: flex;
     justify-content: center;
@@ -45,7 +47,9 @@ main .row .words {
 main .row .words {
     color: white;
     font-size: larger;
-    
+    display: flex;
+    justify-content: center;
+    line-height: 2;
 }
 
 main .row .photo{
@@ -59,4 +63,5 @@ main .row .photo{
 main .row .photo img{
     width: 75%;
     height: 75vh;
+    object-fit: cover;
 }
